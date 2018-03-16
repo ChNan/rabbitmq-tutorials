@@ -1,6 +1,12 @@
-import com.rabbitmq.client.*;
-
 import java.io.IOException;
+
+import com.rabbitmq.client.AMQP;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.Consumer;
+import com.rabbitmq.client.DefaultConsumer;
+import com.rabbitmq.client.Envelope;
 
 public class Recv {
 
@@ -8,7 +14,9 @@ public class Recv {
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
-    factory.setHost("localhost");
+    factory.setHost("106.14.143.3");
+    factory.setUsername("fangwq");
+    factory.setPassword("111111");
     Connection connection = factory.newConnection();
     Channel channel = connection.createChannel();
 
